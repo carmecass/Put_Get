@@ -1,7 +1,7 @@
 import validate from 'pg-validate'
 import call from 'pg-call'
 
-const { REACT_APP_URL } = process.env
+const { REACT_APP_URL} = process.env
 
 const pgApi = {
     __url__: REACT_APP_URL,
@@ -26,13 +26,13 @@ const pgApi = {
 
         validate.email(email)
         
-        return call(`${this.__url__}/users`, {
+        return (async () => await call(`${this.__url__}/users`, {
             
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: {name, email, password},
             timeout: this.__timeout__
-        })
+        }))()
         
     },
 
@@ -55,12 +55,12 @@ const pgApi = {
 
         validate.email(email)        
 
-        return call(`${this.__url__}/users/auth`, {
+        return (async () => await call(`${this.__url__}/users/auth`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
             body: {email, password},
             timeout: this.__timeout__
-        })
+        }))()
         
         // con axios no es necesario
         // .then(res => res)
@@ -82,10 +82,10 @@ const pgApi = {
             
         ])
 
-        return call(`${this.__url__}/users`, {
+        return (async () => await call(`${this.__url__}/users`, {
             method: 'GET',
             headers: {Authorization: `Bearer ${token}`}
-        })
+        }))()
         // con axios no es necesario
         // .then(res => res.json())
     },
@@ -108,14 +108,14 @@ const pgApi = {
             { name: 'token', value: token, type: 'string', notEmpty: true },            
         ])
 
-        return call(`${this.__url__}/things`, {
+        return (async () => await call(`${this.__url__}/things`, {
             method: 'POST',
             headers: { 
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'multipart/form-data'},
             body: formData,
             timeout: this.__timeout__
-        })
+        }))()
     },
 
     /**
@@ -135,14 +135,14 @@ const pgApi = {
             { name: 'status', value: status, type: 'number'}
         ])
 
-        return call(`${this.__url__}//things/update/${id}`, {
+        return (async () => await call(`${this.__url__}//things/update/${id}`, {
             method: 'PATCH',
             headers: { 
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json'},
             body: ({id, status}),
             timeout: this.__timeout__
-        })
+        }))()
     },
 
     /**
@@ -162,12 +162,12 @@ const pgApi = {
             { name: 'category', value: category, type: 'string', notEmpty: true }
         ])
 
-        return call(`${this.__url__}/search/category/${category}`, {
+        return (async () => await call(`${this.__url__}/search/category/${category}`, {
             headers: { 
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json'},
             timeout: this.__timeout__
-        })
+        }))()
     },
 
     /**
@@ -186,12 +186,12 @@ const pgApi = {
             { name: 'location', value: location, type: 'string', notEmpty: true }
         ])
 
-        return call(`${this.__url__}/search/locations/${location}`, {
+        return (async () => await call(`${this.__url__}/search/locations/${location}`, {
             headers: { 
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json'},
             timeout: this.__timeout__
-        })
+        }))()
     },
 
     /**
@@ -208,10 +208,10 @@ const pgApi = {
             { name: 'token', value: token, type: 'string', notEmpty: true },
         ]) 
 
-        return call(`${this.__url__}/search/user/things`, {
+        return(async () => await call(`${this.__url__}/search/user/things`, {
             headers: { Authorization: `Bearer ${token}`},           
             timeout: this.__timeout__
-        })
+        }))()
     },
 
     /**
@@ -229,12 +229,12 @@ const pgApi = {
             { name: 'thingId', value: thingId, type: 'string', notEmpty: true },
         ])
 
-        return call(`${this.__url__}/thing/${thingId}`, {
+        return (async () => await call(`${this.__url__}/thing/${thingId}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'application/json'},
             timeout: this.__timeout__
-        })
+        }))()
     }
 }
 

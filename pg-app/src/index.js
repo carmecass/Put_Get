@@ -4,6 +4,7 @@ import App from './App';
 import './index.sass'
 import * as serviceWorker from './serviceWorker';
 import { HashRouter } from 'react-router-dom'
+
 ReactDOM.render(
  <HashRouter>
    <App />
