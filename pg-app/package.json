@@ -14,14 +14,17 @@
     "react-dom": "^16.8.6",
     "react-google-maps": "^9.4.5",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "snyk": "^1.316.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --runInBand --no-cache",
     "eject": "react-scripts eject",
-    "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache"
+    "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,5 +45,6 @@
     "bcrypt": "^3.0.6",
     "jsonwebtoken": "^8.5.1",
     "pg-data": "file:../pg-data"
-  }
+  },
+  "snyk": true
 }
