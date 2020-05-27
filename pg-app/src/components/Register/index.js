@@ -34,7 +34,7 @@ function Register(props) {
             <div className='field'>
                 <label className='label'>REGISTER</label>
                 <div className='control'>
-                    <div class="control has-icons-left has-icons-right">
+                    <div className="control has-icons-left has-icons-right">
                         <input className='input' name='name' type='text' placeholder='Name' />
                         <span className="icon is-small is-left">
                             <i className="fas fa-user"></i>

@@ -34,7 +34,7 @@ function Login(props) {
     if(logic.isUserLoggedIn) props.history.push('/search/category')
 
     return (
-        <form className="contens6" onSubmit={handleSubmit}>
+        <form className="contens6" onSubmit={(e) => handleSubmit(e)}>
             <div className="field">
                 <div className="control has-icons-left has-icons-right">
                     <input className="input" name='email' type="email" placeholder="Email" />
@@ -62,7 +62,7 @@ function Login(props) {
                 </div>
             </div>
             <div>
-                <a href onClick={handleToRegister}>Not registered yet? Click here to register </a>
+                <a onClick={() =>handleToRegister()}>Not registered yet? Click here to register </a>
             </div>
             {messageError && <div className="message-error">
                 <p>{messageError}</p>
