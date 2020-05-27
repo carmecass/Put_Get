@@ -13,7 +13,7 @@ const { env: { PORT, MONGO_URL: url }, argv: [, , port = PORT || 8080], } = proc
 
     try {
 
-        await mongoose.connect(url, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true });
+        await mongoose.connect(url, { useNewUrlParser: true, useFindAndModify: false, useCreateIndex: true, useUnifiedTopology: true});
 
         console.log('Connection to data base')
 
