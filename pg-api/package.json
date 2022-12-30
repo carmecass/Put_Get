@@ -21,7 +21,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "jest": "^24.8.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "multer": "^1.4.1",
     "pg-data": "file:../pg-data",
     "pg-errors": "file:../pg-errors",
