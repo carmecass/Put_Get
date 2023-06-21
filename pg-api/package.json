@@ -20,8 +20,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
-    "jest": "^24.8.0",
-    "jsonwebtoken": "^8.5.1",
+    "jest": "^26.0.0",
+    "jsonwebtoken": "^9.0.0",
     "multer": "^1.4.1",
     "pg-data": "file:../pg-data",
     "pg-errors": "file:../pg-errors",
@@ -30,6 +30,6 @@
     "validator": "^11.0.0"
   },
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^26.0.0"
   }
 }
