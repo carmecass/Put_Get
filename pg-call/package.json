@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^1.6.3",
     "pg-errors": "file:../pg-errors",
     "pg-validate": "file:../pg-validate"
   }
