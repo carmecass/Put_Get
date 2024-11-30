@@ -8,7 +8,9 @@
     "watch": "nodemon .",
     "debug": "node debug .",
     "test": "jest --runInBand",
-    "test:debug": "node debug ./node_modules/jest/bin/jest.js --runInBand --watchAll"
+    "test:debug": "node debug ./node_modules/jest/bin/jest.js --runInBand --watchAll",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -27,9 +29,11 @@
     "pg-errors": "file:../pg-errors",
     "pg-validate": "file:../pg-validate",
     "streamifier": "^0.1.1",
-    "validator": "^11.0.0"
+    "validator": "^11.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "jest": "^24.8.0"
-  }
+  },
+  "snyk": true
 }
